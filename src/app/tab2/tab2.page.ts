@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
 declare var paypal: any;
-
+//prueba cambio
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
