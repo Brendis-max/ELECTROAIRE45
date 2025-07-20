@@ -1,0 +1,231 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* General styles */
+ion-content {
+  --font-family: 'Inter', sans-serif;
+  --background: none;
+  user-select: none; /* Desactivar selección de texto */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.background-vector {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  
+  background-size: cover;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Card */
+.login-card {
+  background: var(--card-background);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Titles */
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+/* Form */
+.login-form {
+  width: 100%;
+}
+
+.input-item {
+  --background: transparent;
+  --padding-start: 12px;
+  --border-radius: 8px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+
+  ion-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  ion-input {
+    --background: var(--input-background);
+    --border-radius: 8px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    border: 1px solid var(--border-color);
+  }
+
+  &:focus-within {
+    transform: scale(1.02);
+    ion-input {
+      border-color: var(--focus-border-color);
+    }
+  }
+}
+
+.login-button {
+  --border-radius: 12px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-top: 16px;
+  height: 48px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    --background: var(--button-hover);
+  }
+}
+
+/* Extra links */
+.extra-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+/* Light Theme */
+@media (prefers-color-scheme: light) {
+  .background-vector {
+    background: linear-gradient(135deg, #e0f7fa 0%, #f5faff 100%);
+  }
+
+  .login-card {
+    --card-background: #fafafa;
+  }
+
+  .title, .subtitle {
+    color: #0a3d62;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .input-item {
+    --color: #0a3d62;
+    --border-color: #b0bec5;
+    --input-background: #ffffff;
+    --focus-border-color: #26a69a;
+  }
+
+  .login-button {
+    --background: #26a69a; /* Teal primary color */
+    --color: #ffffff;
+    --button-hover: #2aa89d; /* Slightly darker teal on hover */
+    --border-radius: 12px; /* Softer corners */
+    box-shadow: 0 2px 8px rgba(38, 166, 154, 0.2); /* Subtle shadow */
+  }
+
+  .extra-links a {
+    color: #26a69a;
+    font-weight: 500;
+  }
+}
+
+/* Dark Theme */
+
+@media (prefers-color-scheme: dark) {
+  .background-vector {
+    background: linear-gradient(135deg, #2A3A4A 0%, #1C2526 100%);
+  }
+
+  .login-card {
+    --card-background: #2A3A4A;
+  }
+
+  .title, .subtitle {
+    color: #F8FAFC;
+  }
+
+  .input-item {
+    --color: #2EC4D6;
+    --border: 1px solid #6a829900;
+    --input-background: #1C2526;
+    user-select: none;
+  }
+
+  .login-button {
+    --background: #2EC4D6;
+    --color: #F8FAFC;
+    --button-hover: #27A9B8;
+  }
+
+  .extra-links a {
+    color: #2EC4D6;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .logo {
+    width: 120px;
+  }
+
+  .login-card {
+    padding: 16px;
+    max-width: 90%;
+  }
+
+  .logo-container {
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,58 @@
+<ion-content>
+ <ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="end">
+    <button class="buttonbell" aria-label="Notificaciones">
+      <svg viewBox="0 0 448 512" class="bell">
+        <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+      </svg>
+    </button>
+  </ion-buttons>
+    <ion-buttons slot="end" class="carrito">
+      <ion-button (click)="goToCart()">
+        <ion-icon name="cart-outline"></ion-icon>
+        <span class="cart-count">{{ getCartCount() }}</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <!-- Campo de búsqueda -->
+  <ion-searchbar 
+    [(ngModel)]="searchTerm" 
+    (ionInput)="filterItems()" 
+    placeholder="Buscar en ElectroAire..." 
+    class="search-bar">
+  </ion-searchbar>
+
+  <ion-grid>
+    <ion-row class="catalog-row">
+      <ion-col size="6" *ngFor="let item of filteredItems">
+        <div class="catalog-grid">
+          <div class="catalog-item">
+            <div class="badge" *ngIf="item.price < 8000">Oferta Gratis</div>
+            <img [src]="item.image" alt="{{ item.name }}" />
+            <div class="item-content">
+              <h3>{{ item.brand }} {{ item.name }}</h3>
+              <p class="description">{{ item.description }}</p>
+              <div class="price-section">
+                <p><strong>${{ item.price | number:'1.2-2' }}</strong></p>
+              </div>
+              <button type="button" class="button" (click)="addToCart(item)">
+                <span class="button__text">Agregar </span>
+                <span class="button__icon">+</span>
+              </button>
+              <!-- Botón Comprar con PayPal -->
+                <div class="paypal-button-container" [id]="'paypal-button-container-' + item.id"></div>
+                
+              <p class="rating" *ngIf="item.rating">
+                <ion-icon name="star" *ngFor="let star of [1,2,3,4,5]" [class.filled]="star <= item.rating"></ion-icon>
+                ({{ item.rating }})
+              </p>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

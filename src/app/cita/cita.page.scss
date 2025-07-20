@@ -1,0 +1,147 @@
+*{  font-family: 'Poppins', sans-serif; font-size:medium;}
+
+ion-content {
+  --background: transparent !important;
+  padding: 8px;
+}
+
+ion-header {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+  --border-color: transparent !important;
+}
+
+ion-datetime {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto 12px auto;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+/* Estilo base para el contenido del formulario */
+.registrar-cita-content {
+  --background: transparent !important;
+  color: #ffffff;
+  padding: 16px;
+}
+
+/* Título */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Ion-items con fondo degradado */
+ion-item {
+  background: linear-gradient(135deg, #2a343d 0%, #27353d 100%) !important;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  --background: transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+.label-custom {
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Inputs */
+ion-input,
+ion-textarea,
+ion-select,
+ion-datetime {
+  --color: #ffffff;
+  color: #ffffff;
+  --placeholder-color: #bbbbbb;
+}
+
+/* Botón Agendar */
+.agendar-btn {
+  --background: #4ab3a8;
+  --color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 999px;         
+  height: 48px;
+  margin-top: 24px;
+}
+
+.agendar-btn:hover {
+  --background: #3d8f87;
+}
+
+/*  MODO OSCURO */
+@media (prefers-color-scheme: dark) {
+  .registrar-cita-content {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%) !important;
+    color: #ffffff;
+  }
+
+  h1,
+  .label-custom {
+    color: #ffffff;
+  }
+
+  ion-item {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%) !important;
+    color: #ffffff;
+  }
+
+   ion-datetime {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%);
+    color: #ffffff;
+  }
+
+  ion-input,
+  ion-textarea,
+  ion-select,
+  ion-datetime {
+    --color: #ffffff;
+    color: #ffffff;
+    --placeholder-color: #bbbbbb;
+  }
+}
+
+/*  MODO CLARO */
+@media (prefers-color-scheme: light) {
+  .registrar-cita-content {
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%) !important;
+    color: #212121;
+  }
+
+  h1,
+  .label-custom {
+    color: #212121;
+  }
+
+  ion-item {
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%) !important;
+    color: #212121;
+  }
+ 
+  ion-datetime {
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%) !important;
+    color: #000000;
+  }
+
+  ion-input,
+  ion-textarea,
+  ion-select,
+  ion-datetime {
+    --color: #212121;
+    color: #212121;
+    --placeholder-color: #666;
+  }
+}

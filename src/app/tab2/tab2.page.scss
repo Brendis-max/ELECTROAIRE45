@@ -1,0 +1,325 @@
+/* Reset y globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ion-content {
+  --background: transparent !important;
+  padding: 8px;
+}
+
+ion-header {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+  --border-color: transparent !important;
+}
+
+.paypal-button-container iframe {
+  background: transparent !important;
+}
+
+.paypal-button-container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Estilo del buscador */
+ion-searchbar.search-bar {
+  font-family: 'Poppins', sans-serif;
+  --border-radius: 12px;
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 12px 0;
+  padding: 0 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+// campana boton
+
+
+.buttonbell {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(44, 44, 44, 0);
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: rgb(75, 213, 231);
+}
+
+.buttonbell:hover {
+  background-color: rgba(56, 56, 56, 0);
+}
+
+.buttonbell:hover .bell {
+  animation: bellRing 0.9s both;
+}
+
+@keyframes bellRing {
+  0%,
+  100% {
+    transform-origin: top;
+  }
+  15% {
+    transform: rotateZ(10deg);
+  }
+  30% {
+    transform: rotateZ(-10deg);
+  }
+  45% {
+    transform: rotateZ(5deg);
+  }
+  60% {
+    transform: rotateZ(-5deg);
+  }
+  75% {
+    transform: rotateZ(2deg);
+  }
+}
+
+.buttonbell:active {
+  transform: scale(0.8);
+}
+
+.background-vector {
+
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Grilla */
+ion-grid {
+  padding: 0;
+}
+
+.catalog-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+ion-col {
+  padding: 8px;
+  max-width: 50%;
+  flex: 0 0 50%;
+  box-sizing: border-box;
+}
+
+/* Contenedor de cada tarjeta */
+.catalog-grid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Diseño de tarjeta tipo Rappi */
+.catalog-item {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff; /* 👉 Fondo blanco para el recuadro del producto por defecto */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  margin: 10px 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    object-fit: cover;
+  }
+
+  .item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+  }
+
+  .badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: #ff4444;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+  }
+
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #212121; /* 👉 Negro para contraste en fondo blanco */
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #666; /* 👉 Gris para contraste en fondo blanco */
+    margin-bottom: 10px;
+    flex-grow: 1;
+  }
+
+  .price-section {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #26a69a;
+    margin-bottom: 12px;
+  }
+
+  .rating {
+    font-size: 14px;
+    color: #ffbb00;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Botón tipo Rappi */
+.catalog-item .button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #4ab3a8;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.catalog-item .button:hover {
+  background-color: #3d8f87;
+}
+
+/* Contador carrito */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #f44336;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Estilo del botón del carrito en el header */
+ion-header ion-toolbar ion-buttons.carrito ion-button {
+  --background: transparent !important;
+  --border-color: transparent !important;
+  --color: rgb(75, 213, 231);
+  --box-shadow: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive para tablets o más grandes */
+@media (min-width: 600px) {
+  .catalog-item {
+    padding: 20px;
+  }
+
+  .catalog-item .button {
+    font-size: 17px;
+  }
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%);
+  }
+
+  ion-content {
+    --background: linear-gradient(135deg, #2a343d 0%, #27353d 100%) !important;
+  }
+
+  .catalog-item {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%);
+    color: #ffffff;
+  }
+
+  .item-content h3 {
+    color: #ffffff;
+  }
+
+  .item-content p {
+    color: #cccccc;
+  }
+
+  .price-section p {
+    color: #26a69a;
+  }
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%); /* 👉 Gradiente azul claro para el fondo en modo claro */
+  }
+
+  ion-content {
+    --background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%) !important; /* 👉 Gradiente azul claro para ion-content en modo claro */
+  }
+
+  .catalog-item {
+    background: #ffffff; /* 👉 Fondo blanco para el recuadro del producto en modo claro */
+    color: #212121;
+  }
+
+  .item-content h3 {
+    color: #212121;
+  }
+
+  .item-content p {
+    color: #666;
+  }
+
+  .price-section p {
+    color: #26a69a;
+  }
+} 
+
+

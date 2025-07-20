@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ion-content {
+  --background: transparent !important;
+  padding: 8px;
+}
+
+ion-header {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+  --border-color: transparent !important;
+}

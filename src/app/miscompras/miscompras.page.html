@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="compras.length > 0; else sinCompras">
+    <ion-item *ngFor="let compra of compras">
+      <ion-thumbnail slot="start">
+        <img [src]="compra.image" alt="{{ compra.name }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ compra.brand }} {{ compra.name }}</h2>
+        <p>${{ compra.price | number:'1.2-2' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #sinCompras>
+    <ion-text color="medium">
+      <p>No has realizado ninguna compra.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

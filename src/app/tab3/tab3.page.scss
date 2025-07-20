@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ion-content {
+  --background: transparent !important;
+  padding: 0 16px; 
+}
+
+ion-header {
+  --background: transparent !important;
+  background: transparent !important;
+}
+
+ion-toolbar {
+  --background: transparent !important;
+  --border-color: transparent !important;
+}
+
+
+
+
+//perfil 
+.e-card.user-card-style {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  margin: 30px auto;
+  border-radius: 16px;
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Fondo animado con ondas */
+.wave {
+  position: absolute;
+  width: 540px;
+  height: 700px;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -50%;
+  margin-top: -70%;
+  background: linear-gradient(744deg, #bcc9fb, #a6ffff 60%, #17dcea);
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing .wave {
+  animation: wave 3000ms infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+.wave:nth-child(2) {
+  top: 210px;
+  animation-duration: 50s;
+}
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+.wave:nth-child(3) {
+  top: 210px;
+  animation-duration: 45s;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Avatar centrado y con borde blanco */
+.user-avatar-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+/* Card blanca inferior */
+.user-info-card {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  justify-content: flex-start; /* aseguramos que el contenido empiece arriba */
+  padding-top: 70px; /* esto baja el texto */
+  background-color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  
+}
+
+.user-email {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+
+// campana boton
+
+
+.buttonbell {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(44, 44, 44, 0);
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: rgb(75, 213, 231);
+}
+
+.buttonbell:hover {
+  background-color: rgba(56, 56, 56, 0);
+}
+
+.buttonbell:hover .bell {
+  animation: bellRing 0.9s both;
+}
+
+@keyframes bellRing {
+  0%,
+  100% {
+    transform-origin: top;
+  }
+  15% {
+    transform: rotateZ(10deg);
+  }
+  30% {
+    transform: rotateZ(-10deg);
+  }
+  45% {
+    transform: rotateZ(5deg);
+  }
+  60% {
+    transform: rotateZ(-5deg);
+  }
+  75% {
+    transform: rotateZ(2deg);
+  }
+}
+
+.buttonbell:active {
+  transform: scale(0.8);
+}
+
+.background-vector {
+
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Contador carrito */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #f44336;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Botón carrito */
+ion-header ion-toolbar ion-buttons.carrito ion-button {
+  --background: transparent !important;
+  --border-color: transparent !important;
+  --color: rgb(75, 213, 231);
+  --box-shadow: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card de usuario */
+.user-card {
+  background: #32414e; /* ✅ azul oscuro elegante */
+  border-radius: 20px;
+  margin: 16px 0;
+
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+
+    ion-avatar {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+
+      ion-icon {
+        font-size: 80px;
+        color: white;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      font-weight: 600;
+      color: white;
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #ccc;
+    }
+  }
+}
+
+/* Items del menú */
+ion-item {
+  --background: #32414e; 
+  border-radius: 12px;
+  margin: 12px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+
+
+  ion-label {
+     font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 500;
+  }
+
+  ion-icon {
+    color: white;
+  }
+}
+
+
+
+
+/* ======================== */
+/* === Modo OSCURO === */
+/* ======================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%);
+  }
+
+  ion-content {
+    --background: linear-gradient(135deg, #2a343d 0%, #27353d 100%) !important;
+  }
+
+  .user-info-card {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%);
+  }
+
+  h2{
+    --color: rgb(75, 213, 231);
+  }
+}
+
+/* ======================== */
+/* === Modo CLARO === */
+/* ======================== */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%);
+  }
+
+  ion-content {
+    --background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%) !important;
+  }
+
+  .user-card {
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 16px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    ion-card-content {
+      ion-avatar ion-icon {
+        color: #2a2a2a;
+      }
+
+      h2 {
+        color: #2a2a2a;
+      }
+
+      p {
+        color: #555;
+      }
+    }
+  }
+
+  ion-item {
+    --background: #ffffff;
+    border-radius: 12px;
+    margin: 12px 0;
+    padding-left: 0px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+
+    ion-label {
+      color: #212121;
+    }
+
+    ion-icon {
+      color: #2a2a2a;
+    }
+  }
+
+ 
+  }
+

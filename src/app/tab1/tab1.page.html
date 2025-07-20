@@ -1,0 +1,93 @@
+<ion-header>
+ <ion-toolbar>
+  <ion-buttons slot="end">
+    <button class="buttonbell" aria-label="Notificaciones">
+      <svg viewBox="0 0 448 512" class="bell">
+        <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+      </svg>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+  <!-- Bienvenida section -->
+  <div class="e-card playing">
+    <div class="image"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="infotop">
+      <img src="assets/Electroaire.png" class="icon" alt="Electro Aire Logo" />
+      <br />
+      <br />
+    
+    </div>
+  </div>
+
+  <!-- Banner Section -->
+<h2 class="title23">Promociones</h2>
+<div class="banner">
+  <div class="banner-container">
+    <div class="card promo-card" *ngFor="let promo of promociones">
+      <div class="content">
+        <div class="image-container">
+          <img [src]="promo.imagen" [alt]="promo.nombre" />
+        </div>
+        <div class="text-content">
+          <h3>{{ promo.nombre }}</h3>
+          <p class="para">
+            ✅ {{ promo.precio }} <br />
+            ✅ {{ promo.descripcion }} <br />
+            📱Contacto: <a [href]="'tel:' + promo.contacto">{{ promo.contacto }}</a>
+          </p>
+        </div>
+        <div class="button-container">
+          <a [href]="'tel:' + promo.contacto" class="btn">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Services Section -->
+<div class="promociones">
+  <h2 class="title">Nuestros Servicios</h2>
+  <div class="promociones-container">
+    <ion-card *ngFor="let servicio of servicios">
+      <img [src]="servicio.imagen" [alt]="servicio.nombre" />
+      <ion-card-content>
+        <h3>{{ servicio.nombre }}</h3>
+        <p>{{ servicio.descripcion }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
+
+  <!-- Visítanos Section -->
+ <h2 class="title23" >Visitanos</h2>
+  <ion-card class="visitanos-card">
+    <ion-card-content>
+      <p><ion-icon name="location-outline"></ion-icon> AVENIDA 25 ENTRE CALLE 1 BIS, Av. 25 Y 5, 94580 Córdoba, Ver.</p>
+      <p><ion-icon name="call-outline"></ion-icon> Teléfono: <a href="tel:+522717175979">+522717175979</a></p>
+      <p><ion-icon name="time-outline"></ion-icon> Horario: 9:00 AM - 6:00 PM</p>
+      <div class="mapa-container loading">
+        <iframe 
+          title="Mapa de ubicación de AVENIDA 25, Córdoba, Veracruz"
+          src="https://www.google.com/maps/embed?pb=!4v1748641736518!6m8!1m7!1s_5qkL0ePINqHbSwJgGxMQA!2m2!1d18.88497872733167!2d-96.94181159656928!3f226.20942542991634!4f6.887374192044206!5f0.9702357293760006" 
+          width="100%" 
+          height="50%" 
+          style="border:1px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          onload="this.parentNode.classList.remove('loading');">
+        </iframe>
+      </div>
+    </ion-card-content>
+  </ion-card>
+<div>
+</div>
+
+
+</ion-content>
+  

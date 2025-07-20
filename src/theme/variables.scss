@@ -1,0 +1,34 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+:root {
+  --ion-color-primary: #00bcd4;
+  --ion-color-primary-rgb: 0, 188, 212;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #00a0b6;
+  --ion-color-primary-tint: #26c6da;
+}
+ion-header.md.header-md {
+  box-shadow: none;
+}
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+ 
+
+  /* Aplica el gradiente directamente al body */
+  body {
+    background: linear-gradient(135deg, #2a343d 0%, #27353d 100%);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+   /* También es bueno definir el fondo para modo claro explícitamente */
+  body {  
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%);
+  }
+}   

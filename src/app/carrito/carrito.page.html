@@ -1,0 +1,56 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="regresar()">
+          <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <h1>Carrito</h1>
+
+    <ion-list *ngIf="cartItems.length > 0; else emptyCart">
+      <ion-item-sliding *ngFor="let item of cartItems; let i = index">
+        <ion-item>
+          <ion-checkbox
+            slot="end"
+            [(ngModel)]="item.selected"
+            (ionChange)="updateTotal()"
+          ></ion-checkbox>
+          <ion-thumbnail slot="start">
+            <img [src]="item.image" alt="{{ item.name }}" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ item.brand }} {{ item.name }}</h2>
+            <p>${{ item.price }} x {{ item.quantity }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="removeFromCart(item)"
+            >Eliminar</ion-item-option
+          >
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <!-- Tarjeta con el total de los seleccionados -->
+      <ion-card *ngIf="cartItems.length > 0">
+        <ion-card-header>
+          <ion-card-title>Total a pagar</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Subtotal: ${{ getSelectedTotal().toFixed(2) }}</p>
+
+          <!-- Contenedor para el botón de PayPal -->
+          <div id="paypal-button-container"></div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ng-template #emptyCart>
+      <p style="text-align: center; padding: 20px">Tu carrito está vacío.</p>
+    </ng-template>
+  </ion-content>
+</ion-content>

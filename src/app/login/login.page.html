@@ -1,0 +1,58 @@
+
+<!-- Importación de fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<!-- Inicio de estructura de login -->
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <!-- Contenedor principal con vector de fondo -->
+  <div class="background-vector">
+    <div class="login-container">
+      <!-- Tarjeta con el formulario -->
+      <ion-card class="login-card">
+        
+
+        
+
+        <!-- Logo de ElectroAire -->
+        <div class="logo-container">
+          <img src="assets/Electroaire.png" alt="ElectroAire Logo" class="logo" />
+        </div>
+
+        <!-- Título -->
+        <h1 class="title" >Bienvenido</h1>
+        <p class="subtitle">Inicia sesión para gestionar tus servicios de climatización</p>
+
+        <!-- Formulario -->
+        <form class="login-form" (ngSubmit)="onLogin()">
+          <ion-item lines="none" class="input-item">
+            <ion-label position="stacked">Correo Electrónico</ion-label>
+            <ion-input type="email" [(ngModel)]="email" name="email" required no-select-on-focus></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="input-item">
+            <ion-label position="stacked">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password" required no-select-on-focus></ion-input>
+          </ion-item>
+
+          <!-- Botón de Iniciar Sesión -->
+          <ion-button expand="block" type="submit" class="login-button">
+            Iniciar Sesión
+          </ion-button>
+        </form>
+          
+        <!-- Botón de Inicio de Sesión con Google -->
+        <ion-button expand="block" fill="outline" class="google-button" (click)="signInWithGoogle()">
+          <ion-icon name="logo-google" slot="start"></ion-icon>
+          Continuar con google
+         </ion-button>
+
+        <!-- Enlaces adicionales -->
+        <div class="extra-links">
+          <a href="/rescontra">¿Olvidaste tu contraseña?</a>
+          <p>¿No tienes cuenta? <a href="/register">Regístrate</a></p>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

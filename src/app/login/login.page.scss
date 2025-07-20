@@ -1,0 +1,257 @@
+// Importar fuente Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+// Definir variables CSS
+:root {
+  --card-background-light: #F8FAFC;
+  --card-background-dark: #2A3A4A;
+  --input-background-light: #E6F0FA;
+  --input-background-dark: #1C2526;
+  --border-color-light: #d1e0ee;
+  --border-color-dark: #6a8299;
+  --button-hover-light: #2aa89d;
+  --button-hover-dark: #27A9B8;
+}
+
+// Estilos generales
+ion-content {
+  --font-family: 'Poppins', sans-serif;
+  --background: none;
+  user-select: none;
+}
+
+.background-vector {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  z-index: 1;
+}
+
+// Tarjeta
+.login-card {
+  background: var(--card-background-light);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Logo
+.logo-container {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Títulos
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+  color: #2A3A4A;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 24px;
+  opacity: 0.8;
+  font-family: 'Montserrat', sans-serif;
+  color: #2A3A4A;
+}
+
+// Formulario
+.login-form {
+  width: 100%;
+}
+
+.input-item {
+  --background: transparent !important;
+  --padding-start: 12px;
+  --border-radius: 8px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+
+  ion-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2A3A4A;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  ion-input {
+    --background: var(--input-background-light);
+    --border-radius: 8px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --color: #2A3A4A;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 0 0 1px var(--border-color-light);
+  }
+
+  &:hover {
+    --background: var(--input-background-light);
+  }
+}
+
+.login-button {
+  --background: #26a69a;
+  --color: #ffffff;
+  --border-radius: 8px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-top: 16px;
+  height: 48px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(38, 166, 154, 0.2);
+
+  &:hover {
+    --background: var(--button-hover-light);
+  }
+}
+
+// Botón de Google
+.google-button {
+  margin-top: 10px;
+  --background: transparent;
+  --border-color: #2EC4D6;
+  --color: #2EC4D6;
+  --border-radius: 8px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  height: 48px;
+  text-transform: none;
+  font-family: 'Montserrat', sans-serif;
+
+  ion-icon[name="logo-google"] {
+    font-size: 19px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    --background: #242526;
+    --color: #27AE60;
+  }
+}
+
+// Enlaces adicionales
+.extra-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  font-family: 'Poppins', sans-serif;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #2EC4D6;
+  }
+}
+
+// Tema Claro
+@media (prefers-color-scheme: light) {
+  .background-vector {
+    background: linear-gradient(135deg, #E6F0FA 0%, #F8FAFC 100%);
+  }
+
+  .login-card {
+    background: var(--card-background-light);
+  }
+
+  .title, .subtitle, .input-item ion-label {
+    color: #2A3A4A;
+  }
+
+  .input-item ion-input {
+    --background: var(--input-background-light);
+    --color: #2A3A4A;
+    box-shadow: 0 0 0 1px var(--border-color-light);
+  }
+
+  .login-button {
+    --background: #26a69a;
+    --color: #ffffff;
+    --button-hover: var(--button-hover-light);
+    box-shadow: 0 2px 8px rgba(38, 166, 154, 0.2);
+  }
+
+  .extra-links a {
+    color: #2EC4D6;
+  }
+}
+
+// Tema Oscuro
+@media (prefers-color-scheme: dark) {
+  .background-vector {
+    background: linear-gradient(135deg, #2A3A4A 0%, #1C2526 100%);
+  }
+
+  .login-card {
+    background: var(--card-background-dark);
+  }
+
+  .title, .subtitle, .input-item ion-label {
+    color: #F8FAFC;
+  }
+
+  .input-item ion-input {
+    --background: var(--input-background-dark);
+    --color: #F8FAFC;
+    box-shadow: 0 0 0 1px var(--border-color-dark);
+  }
+
+  .login-button {
+    --background: #2EC4D6;
+    --color: #F8FAFC;
+    --button-hover: var(--button-hover-dark);
+    box-shadow: 0 2px 8px rgba(46, 196, 214, 0.2);
+  }
+
+  .extra-links a {
+    color: #2EC4D6;
+  }
+
+  .google-button {
+    --background: #242526;
+    --border-color: #F8FAFC;
+    --color: #F8FAFC;
+  }
+}

@@ -1,0 +1,76 @@
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="regresar()">
+          <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding registrar-cita-content">
+    <h1>Registrar cita</h1>
+
+    <!-- Fecha -->
+    <ion-item lines="none">
+      <ion-label position="stacked" class="label-custom">Fecha:</ion-label>
+      <ion-input [value]="date | date:'dd/MM/yyyy'" readonly (click)="abrirFecha()" placeholder="dd/mm/aaaa"></ion-input>
+      <ion-icon name="calendar-outline" slot="end" (click)="abrirFecha()"></ion-icon>
+    </ion-item>
+    <ion-datetime
+      *ngIf="mostrarFecha"
+      presentation="date"
+      [(ngModel)]="date"
+      (ionChange)="cerrarFecha()"
+      preferWheel="false">
+    </ion-datetime>
+
+    <!-- Hora -->
+    <ion-item lines="none">
+      <ion-label position="stacked" class="label-custom">Hora:</ion-label>
+      <ion-input
+        [value]="time | date: 'HH:mm'"
+        readonly
+        (click)="abrirHora()"
+        placeholder="--:--">
+      </ion-input>
+      <ion-icon
+        name="time-outline"
+        slot="end"
+        (click)="abrirHora()">
+      </ion-icon>
+    </ion-item>
+    <ion-datetime
+      *ngIf="mostrarHora"
+      presentation="time"
+      [(ngModel)]="time"
+      (ionChange)="cerrarHora()"
+      hour-cycle="h23"
+      preferWheel="false">
+    </ion-datetime>
+
+    <!-- Dirección -->
+    <ion-item lines="none">
+      <ion-label position="stacked" class="label-custom">Dirección:</ion-label>
+      <ion-input [(ngModel)]="address" name="address"></ion-input>
+    </ion-item>
+
+    <!-- Servicio -->
+    <ion-item lines="none">
+      <ion-label position="stacked" class="label-custom">Servicio:</ion-label>
+      <ion-select placeholder="Selecciona un servicio" [(ngModel)]="service" name="service">
+        <ion-select-option *ngFor="let s of servicios" [value]="s">{{ s }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Notas -->
+    <ion-item lines="none">
+      <ion-label position="stacked" class="label-custom">Notas:</ion-label>
+      <ion-textarea [(ngModel)]="notes" name="notes" autoGrow="true"></ion-textarea>
+    </ion-item>
+
+    <!-- Botón -->
+    <ion-button expand="block" shape="round" class="agendar-btn" (click)="agendarCita()">
+      Agendar cita
+    </ion-button>
+  </ion-content>
